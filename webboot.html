@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="km">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sathapana Bank Clone Layout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        :root {
+            --bank-blue: #005ca9;       
+            --bank-dark-blue: #002d62;  
+            --text-light: #ffffff;
+        }
+
+        body {
+            font-family: 'Khmer OS Battambang', 'Segoe UI', sans-serif;
+            background-color: #f8f9fa;
+        }
+        
+
+        .top-bar {
+            background-color: rgb(40, 40, 121);
+            font-size: 0.85rem;
+        }
+        .top-bar a {
+            color: white;
+            text-decoration: none;
+            padding: 2px 0;
+        }
+        .top-bar a:hover {
+            text-decoration: underline;
+        }
+        .top-bar .divider {
+            color: rgba(255, 255, 255, 0.4);
+            padding: 0 8px;
+        }
+
+    
+        .logo-img {
+            width: 280px; 
+            height: auto;
+            border: none;
+        }
+        @media (max-width: 768px) {
+            .logo-img {
+                width: 200px;
+            }
+        }
+
+        .main-nav {
+            background-color: darkblue;
+            padding: 0;
+        }
+        .main-nav .nav-link {
+            color: var(--text-light);
+            padding: 15px 20px;
+            font-weight: 500;
+        }
+        .main-nav .nav-link:hover {
+            background-color: var(--bank-dark-blue);
+        }
+        .main-nav .nav-link #mainNavbar .icon{
+            color: blue;
+        }
+        
+  
+        .ibanking-btn {
+            background-color: #302078 ;   
+            color: blue;   
+            font-weight: bold;
+            border-left: 1px solid #e2e8f0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 25px;
+            font-size: 0.9rem;
+        }
+
+
+    
+        .ibanking-btn i {
+            color: blue;
+            margin-right: 8px;
+        }
+
+        .bank-mobile-drawer {
+            width: 300px;
+        }
+        .bank-mobile-drawer .offcanvas-header {
+            border-bottom: 1px solid #e2e8f0;
+            padding: 15px;
+        }
+        .bank-mobile-drawer .offcanvas-body {
+            padding: 0;
+        }
+
+        .mobile-menu-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .mobile-menu-list li {
+            border-bottom: 1px solid #f1f5f9;
+        }
+        .mobile-menu-list li a {
+            display: block;
+            padding: 15px 20px;
+            color: #334155;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: background 0.2s;
+        }
+        .mobile-menu-list li a:hover, 
+        .mobile-menu-list li a.active {
+            background-color: #f8fafc;
+            color: var(--bank-blue);
+        }
+        .mobile-ibanking-box {
+            padding: 20px;
+        }
+        .mobile-ibk-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            text-decoration: none;
+            margin-bottom: 12px;
+            font-size: 0.9rem;
+        }
+        .mobile-ibk-btn.personal {
+            background-color: #f0f7fc;
+            color: var(--bank-blue);
+            border: 1px solid #cbd5e1;
+        }
+        .mobile-ibk-btn.business {
+            background-color: blue;
+            color: white;
+        }
+
+        .hero-section {
+            position: relative;
+        }
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 40px; 
+            background: linear-gradient(to bottom, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+            z-index: 2;
+            pointer-events: none;
+        }
+
+        @media screen and (max-width: 576px) {
+            .hero-section .box-image .item-image  img { 
+                height: 35vh; 
+                object-fit: cover; 
+                font-size: 0.7rem;
+
+            }
+            .top-bar .top-bar .divider{
+                font-size: 0.7rem;
+                padding: 0 4px;
+            }
+        }
+        @media screen and (min-width: 768px) and (max-width: 1279px) {
+            .hero-section .box-image .item-image img { height: 40vh; object-fit: cover; }
+        }
+        @media screen and (min-width: 1280px) {
+            .hero-section .box-image .item-image img { height: 70vh; object-fit: cover; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="top-bar py-2 text-white">
+        <div class="container d-flex justify-content-between align-items-center">
+            <div class="d-flex flex-wrap align-items-center">
+            
+                <a href="#">ស្ថាបនា</a> 
+
+                <span class="d-none d-sm-inline">
+                    <span class="divider">|</span><a href="#">អំពីធនាគារស្ថាបនា</a>
+                    <span class="divider">|</span><a href="#">ព័ត៌មាន</a>
+                    <span class="divider">|</span><a href="#">ទំនាក់ទំនង</a>
+                    <span class="divider">|</span><a href="#">ឱកាសការងារ</a>
+                    <span class="divider">|</span><a href="#">ទីតាំង</a>
+                    <span class="divider">|</span><a href="#">គណនា</a>
+                </span>
+            </div>
+            
+            <div class="d-flex align-items-center ms-auto">
+                <a href="#" class="me-3"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="me-3"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="me-3"><i class="fab fa-youtube"></i></a>
+                <span class="badge bg-danger ms-2" style="font-size: 0.75rem;">KH</span>
+            </div>
+        </div>
+    </header>
+
+    <div class="bg-white shadow-sm py-3">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="#" class="m-0">
+                <img class="logo-img" src="https://media.licdn.com/dms/image/v2/C5612AQF2wGpOwAlHOg/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1591073215020?e=2147483647&v=beta&t=aN4iIz_d8vdQh43uQ429piCPtXJLfvdjgsVHs-1VsBg" alt="Sathapana Logo">
+            </a>
+            
+            <div class="search-box d-none d-md-block" style="width: 350px;">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="ស្វែងរកក្នុងគេហទំព័រទាំងមូល">
+                    <button class="btn btn-light border text-muted" type="button">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg main-nav navbar-dark p-0 sticky-top">
+        <div class="container">
+            <button class="navbar-toggler my-2 ms-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#sathapanaMobileDrawer" aria-controls="sathapanaMobileDrawer">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            
+            <div class="collapse navbar-collapse " id="mainNavbar">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 d-flex">
+                    <li class="nav-item"><a class="nav-link active" href="#">ទំព័រដើម</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">សេវាកម្មបុគ្គល</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">សេវាកម្មអាជីវកម្ម</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">ធនាគារឌីជីថល</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">ជំនួយ</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">ព័ត៌មាន</a></li>
+                </ul>
+                
+                <div class="d-flex flex-column flex-lg-row icon">
+                    <a href="#" class="nav-link ibanking-btn">
+                        <i class="fas fa-lock text-primary me-2"></i> Personal iBanking
+                    </a>
+                    <a href="#" class="nav-link ibanking-btn">
+                        <i class="fas fa-lock text-primary me-2"></i> Business iBanking
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="offcanvas offcanvas-end bank-mobile-drawer" tabindex="-1" id="sathapanaMobileDrawer" aria-labelledby="sathapanaMobileDrawerLabel">
+        <div class="offcanvas-header d-flex justify-content-between align-items-center">
+            <img src="https://www.manulife.com.kh/km/about-us/our-bancassurance-partners/_jcr_content/root/responsivegrid_641029165/responsivegrid/responsivegrid_10114/responsivegrid_copy/responsivegrid_copy__1265674304/image_copy.coreimg.82.1000.jpeg/1610695419762/sathapana-manulife.jpeg" alt="Logo" style="height: 35px; width: auto;">
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        
+        <div class="offcanvas-body d-flex flex-column justify-content-between">
+            <ul class="mobile-menu-list">
+                <li><a class="active" href="#">ទំព័រដើម</a></li>
+                <li><a href="#">សេវាកម្មបុគ្គល</a></li>
+                <li><a href="#">សេវាកម្មអាជីវកម្ម</a></li>
+                <li><a href="#">ធនាគារឌីជីថល</a></li>
+                <li><a href="#">ជំនួយ</a></li>
+                <li><a href="#">ព័ត៌មាន</a></li>
+            </ul>
+
+            <div class="mobile-ibanking-box bg-light border-top">
+                <a href="#" class="mobile-ibk-btn personal">
+                    <i class="fas fa-lock me-2"></i> PERSONAL iBANKING
+                </a>
+                <a href="#" class="mobile-ibk-btn business">
+                    <i class="fas fa-lock me-2"></i> BUSINESS iBANKING
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="carouselExampleInterval" class="carousel hero-section slide" data-bs-ride="carousel">
+        <div class="carousel-inner box-image">
+            <div class="carousel-item active item-image" data-bs-interval="10000">
+                <img src="https://i.pinimg.com/webp/736x/da/11/ea/da11ea663407b079a2731d9d5cd57dac.webp" class="d-block w-100" alt="Slide 1">
+            </div>
+            <div class="carousel-item item-image" data-bs-interval="2000">
+                <img src="https://i.pinimg.com/736x/14/c9/ba/14c9ba29f5d27da98cdcd12edba318cb.jpg" class="d-block w-100" alt="Slide 2">
+            </div>
+            <div class="carousel-item item-image">
+                <img src="https://i.pinimg.com/1200x/68/f0/a2/68f0a22f4250ee261c5dd9bafeA664255.jpg" class="d-block w-100" alt="Slide 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+    <div class="container-fluid mx-auto p-3 row box-card h-auto gap-4 justify-content-center gap-md-5 ">
+        <div class="col-12 col-md-5 col-lg-3 h-auto shadow-lg  rounded-4 pb-2 bg-white p-0">
+            <img style="height: 230px;" class="w-100 object-fit-cover rounded-top-4" src="https://i.pinimg.com/736x/b7/fd/89/b7fd89c23682ee2a0a94ed5669c91658.jpg" alt="">
+            <div class="w-100 h-auto p-2"></div>
+            <h2 class="ms-3">Matcha strewberry</h2>
+            <p class="fs-5 ms-3">The crown prince that never become a king</p>
+            <span class="fs-4 text-success fw-medium lh-1 ms-3">The best player of all time</span>
+            <button class="btn btn-primary w-100 mt-3 py-2 fs-5 fw-medium">Agree</button>
+        </div>
+
+        <div class="col-12 h-auto col-md-5 col-lg-3 h-auto shadow-lg  rounded-4 pb-2 bg-white p-0">
+            <img style="height: 230px;" class="w-100 object-fit-cover rounded-top-4" src="https://i.pinimg.com/736x/93/c2/d6/93c2d6f9826e867edffe67d0ae270f1a.jpg" alt="">
+            <div class="w-100 h-auto p-2"></div>
+            <h2 class="ms-3">Coffee</h2>
+            <p class="fs-5 ms-3">The crown prince that never become a king</p>
+            <span class="fs-4 text-success fw-medium lh-1 ms-3">The best player of all time</span>
+            <button class="btn btn-primary w-100 mt-3 py-2 fs-5 fw-medium">Agree</button>
+        </div>
+
+        <div class="col-12 col-md-5 col-lg-3 h-auto shadow-lg  rounded-4 pb-2 bg-white p-0">
+            <img style="height: 230px;" class="w-100 object-fit-cover rounded-top-4" src="https://i.pinimg.com/736x/cb/9a/4d/cb9a4dd422cb9c66de7ac2e1c824a94d.jpg" alt="">
+            <div class="w-100 h-auto p-2"></div>
+            <h2>This is Neymar</h2>
+            <p class="fs-5">Americano Coffee</p>
+            <span class="fs-4 text-success fw-medium lh-1">The best player of all time</span>
+            <button class="btn btn-primary w-100 mt-3 py-2 fs-5 fw-medium">Agree</button>
+        </div>
+    </div>
+    <div class="container-fluid mx-auto p-3 row box-card h-auto gap-4 justify-content-center gap-md-5 ">
+        <div class="col-12 col-md-5 col-lg-3 h-auto shadow-lg  rounded-4 pb-2 bg-white p-0">
+            <img style="height: 230px;" class="w-100 object-fit-cover rounded-top-4" src="https://i.pinimg.com/736x/d6/fc/e1/d6fce118b27037475f20c95e5cc7c53a.jpg" alt="">
+            <div class="w-100 h-auto p-2"></div>
+            <h2 class="ms-3">My girl</h2>
+            <p class="fs-5 ms-3">My beautiful Gurl</p>
+            <span class="fs-4 text-success fw-medium lh-1 ms-3">The best player of all time</span>
+            <button class="btn btn-primary w-100 mt-3 py-2 fs-5 fw-medium">Agree</button>
+        </div>
+
+        <div class="col-12 h-auto col-md-5 col-lg-3 h-auto shadow-lg  rounded-4 pb-2 bg-white p-0">
+            <img style="height: 230px;" class="w-100 object-fit-cover rounded-top-4" src="https://i.pinimg.com/736x/b2/33/42/b23342e2f4805deaf6aba6986b3603c6.jpg" alt="">
+            <div class="w-100 h-auto p-2"></div>
+            <h2 class="ms-3">My Girl</h2>
+            <p class="fs-5 ms-3">Sad ending mode</p>
+            <span class="fs-4 text-success fw-medium lh-1 ms-3">The best anime of all time</span>
+            <button class="btn btn-primary w-100 mt-3 py-2 fs-5 fw-medium">Agree</button>
+        </div>
+
+        <div class="col-12 col-md-5 col-lg-3 h-auto shadow-lg  rounded-4 pb-2 bg-white p-0">
+            <img style="height: 230px;" class="w-100 object-fit-cover rounded-top-4" src="https://i.pinimg.com/webp/736x/fa/b4/d0/fab4d0cd6cc59d4fa115529afd28c7a5.webp" alt="">
+            <div class="w-100 h-auto p-2"></div>
+            <h2>This is Neymar</h2>
+            <p class="fs-5">Americano Coffee</p>
+            <span class="fs-4 text-success fw-medium lh-1">The best player of all time</span>
+            <button class="btn btn-primary w-100 mt-3 py-2 fs-5 fw-medium">Agree</button>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
